@@ -1,0 +1,41 @@
+version: '2'
+
+services:   
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+      - "8090:8090"    
+
+  init:
+    build: ./init
+    entrypoint: curl -G http://influxdb:8086/query --data-urlencode "q=CREATE DATABASE snap"
+    depends_on: 
+      - influxdb
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    links:
+      - influxdb
+    volumes:
+      - grafana-volume:/var/lib/grafana
+    
+  snap:
+    image: intelsdi/snap:alpine_test
+    container_name: snap
+    ports:
+      - "8181:8181"
+    links:
+      - influxdb
+    volumes: 
+      - ./snap/plugins:/opt/snap/plugins
+    depends_on: 
+      - init
+
+volumes:
+  grafana-volume:
