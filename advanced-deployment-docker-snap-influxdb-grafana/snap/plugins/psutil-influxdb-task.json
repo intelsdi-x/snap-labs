@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "schedule": {
+        "type": "simple",
+        "interval": "1s"
+    },
+    "workflow": {
+        "collect": {
+            "metrics": {
+                "/intel/psutil/load/load1": {},
+                "/intel/psutil/load/load5": {},
+                "/intel/psutil/load/load15": {},
+                "/intel/psutil/vm/available": {},
+                "/intel/psutil/vm/free": {},
+                "/intel/psutil/vm/used": {},
+                "/intel/psutil/net/*/bytes_recv": {},
+                "/intel/psutil/net/*/bytes_sent": {}
+            },
+            "process": null,
+            "publish": [
+                {
+                    "plugin_name": "influxdb",
+                    "config": {
+                        "host": "influxdb",
+                        "port": 8086,
+                        "database": "snap",
+                        "user": "admin",
+                        "password": "admin",
+                        "isMultiFields": false
+                    }
+                }
+            ]
+        }
+    }
+}
