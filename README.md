@@ -1,4 +1,4 @@
-# snap-tutorials
+# Snap Labs
 A curated set of guides to using Snap, the open telemetry framework
 
 ### What are these?
@@ -8,7 +8,7 @@ A curated set of guides to using Snap, the open telemetry framework
 
 ### Where should I start?
 
-We aim to have introductions to each major feature and label them as `introduction-<feature>`. More advanced topics are titled `advanced-<feature>`. You get the idea. Tutorials that do not smoothly fall into one of these categories will be called `topic-<topic>`. Examples would be:
+We aim to have introductions to each major feature and label them as `introduction-<feature>`. More advanced topics are titled `advanced-<feature>`. You get the idea. Labs that do not smoothly fall into one of these categories will be called `topic-<topic>`. Examples would be:
 
 * `introduction-distributed-workflow` or `introduction-snmp-plugin`
 * `advanced-graphite-plugin` or `advanced-distributed-workflow`
@@ -20,4 +20,4 @@ Every plugin has working examples including Task Manifests and required configur
 
 ### Can I contribute?
 
-You bet! An overview of how we organize these tutorials is in [CONTRIBUTING.md](CONTRIBUTING.md).
+You bet! An overview of how we organize these labs is in [CONTRIBUTING.md](CONTRIBUTING.md).
