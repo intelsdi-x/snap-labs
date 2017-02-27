@@ -46,8 +46,8 @@ For great labs, use some of these lessons learned by us:
 
 * When animation is better than words, [make gifs with licecap][1]!
 * You can make assumptions! For example, [this post](introduction-grafana-snap-app/README.md) focuses on Ubuntu 16.04 as the OS but links to others
-* It's best for if the tutorial folder length is < 32 characters (to render cleanly on GitHub)
+* It's best if the tutorial folder length is < 32 characters (to render cleanly on GitHub)
 
 [1]: http://www.cockos.com/licecap/
 
-And thank you! Your contributions to Snap and its community are always appreciated.
+And thank you! Your contributions to Snap and its community are always appreciated. 🐢

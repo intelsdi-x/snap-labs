@@ -1,5 +1,5 @@
-# snap-tutorials
-A curated set of guides to using Snap, the open telemetry framework
+# Snap Labs
+A set of guides to using Snap, the open telemetry framework. Read an overview at [snap-telemetry.io](http://snap-telemetry.io) or [head right to the repo](https://github.com/intelsdi-x/snap#the-snap-telemetry-framework----).
 
 ### What are these?
 
@@ -8,7 +8,7 @@ A curated set of guides to using Snap, the open telemetry framework
 
 ### Where should I start?
 
-We aim to have introductions to each major feature and label them as `introduction-<feature>`. More advanced topics are titled `advanced-<feature>`. You get the idea. Tutorials that do not smoothly fall into one of these categories will be called `topic-<topic>`. Examples would be:
+We aim to have introductions to each major feature and label them as `introduction-<feature>`. More advanced topics are titled `advanced-<feature>`. You get the idea. Labs that do not smoothly fall into one of these categories will be called `topic-<topic>`. Examples would be:
 
 * `introduction-distributed-workflow` or `introduction-snmp-plugin`
 * `advanced-graphite-plugin` or `advanced-distributed-workflow`
@@ -16,8 +16,8 @@ We aim to have introductions to each major feature and label them as `introducti
 
 ### Where else should I look to learn about Snap?
 
-Every plugin has working examples including Task Manifests and required configuration files. So if you know you want to learn the basics of a plugin, like the Graphite publisher for example, go directly to its example in the README (ex. [Graphite example section](https://github.com/intelsdi-x/snap-plugin-publisher-graphite#examples))
+Every plugin has working examples including Task Manifests and required configuration files. So if you know you want to learn the basics of a plugin, like the Graphite publisher for example, go directly to its example in the README (ex. [Graphite example section](https://github.com/intelsdi-x/snap-plugin-publisher-graphite#examples)).
 
 ### Can I contribute?
 
-You bet! An overview of how we organize these tutorials is in [CONTRIBUTING.md](CONTRIBUTING.md).
+You bet! An overview of how we organize these labs is in [CONTRIBUTING.md](CONTRIBUTING.md).
