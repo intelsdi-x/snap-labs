@@ -1,0 +1,32 @@
+version: "2"
+
+services:
+  snap:
+    build: ./snap
+    container_name: snap
+    ports:
+      - "8181:8181"
+    tty: true
+    links:
+      - influxdb
+  influxdb:
+    image: tutum/influxdb
+    container_name: influxdb
+    environment:
+      UDP_DB: "test"
+    expose:
+      - "8083"
+      - "8086"
+      - "4444/udp"
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+  grafana:
+    image: grafana/grafana:4.1.2
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_INSTALL_PLUGINS: raintank-snap-app
+    depends_on:
+      - snap

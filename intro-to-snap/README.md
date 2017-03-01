@@ -1,3 +1,3 @@
-# Introduction to Snap 
+# Introduction to Snap
 
 
