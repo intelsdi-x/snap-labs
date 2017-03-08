@@ -4,6 +4,10 @@ set -e
 set -u
 set -o pipefail
 
+_error() {
+  echo "${*}" 1>&2 || true; exit 1;
+}
+
 _verify_docker() {
   type -p docker > /dev/null 2>&1 || _error "docker needs to be installed"
   type -p docker-compose > /dev/null 2>&1 || _error "docker-compose needs to be installed"
