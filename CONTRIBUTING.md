@@ -22,6 +22,15 @@ To design your folder structure:
   * If the tutorial is best separated out into parts, create multiple sections as separate files. See [this fantastic tutorial from Slack](https://github.com/slackapi/Slack-Ruby-Onboarding-Tutorial) for an example of how this looks in practice
 * Include any code snippets you want in the folder. See [advanced-deployment-docker-snap-influxdb-grafana/](advanced-deployment-docker-snap-influxdb-grafana/) for an example of this
 
+You can also take advantage of `git submodules` to add your tutorial. For example, we added [@candysmurf's](https://github.com/candysmurf) tutorial by doing the following: 
+
+```
+$ cd snap-labs/
+$ git submodule add https://github.com/candysmurf/snap-elasticsearch-monitor topic-monitoring-elasticsearch-kubernetes
+```
+
+Where the URL is the GitHub repository and the last parameter is what you want to name the folder. Read the next section, for folder naming conventions.
+
 ### Introduction, Advanced or Topic?
 
 We designed a very simple organization system to get us started:

@@ -1,0 +1,48 @@
+---
+  version: 1
+  schedule:
+    type: "simple"
+    interval: "1s"
+  max-failures: 10
+  workflow: 
+    collect:
+      metrics:
+        /intel/elasticsearch/node/*/transport/tx_count: {}
+        /intel/elasticsearch/node/*/transport/rx_count: {}
+        /intel/elasticsearch/node/*/transport/tx_size_in_bytes: {}
+        /intel/elasticsearch/node/*/transport/tx_size_in_bytes: {}
+        /intel/elasticsearch/node/*/fs/total/free_in_bytes: {}
+        /intel/elasticsearch/node/*/indices/docs/count: {}
+        /intel/elasticsearch/node/*/indices/get/missing_total: {}
+        /intel/elasticsearch/node/*/jvm/classes/total_loaded_count: {}
+        /intel/elasticsearch/node/*/jvm/gc/collectors/young/collection_count: {}
+        /intel/elasticsearch/node/*/jvm/gc/collectors/old/collection_count: {}
+        /intel/elasticsearch/node/*/jvm/gc/collectors/young/collection_count: {}
+        /intel/elasticsearch/node/*/jvm/classes/current_loaded_count: {}
+        /intel/elasticsearch/node/*/jvm/classes/total_loaded_count: {}
+        /intel/elasticsearch/node/*/jvm/mem/heap_max_in_bytes: {}
+        /intel/elasticsearch/node/*/jvm/mem/heap_used_percent: {}
+        /intel/elasticsearch/node/*/os/mem/free_percent: {}
+        /intel/elasticsearch/node/*/os/mem/used_percent: {}
+        /intel/elasticsearch/node/*/jvm/mem/pools/old/used_in_bytes: {}
+        /intel/elasticsearch/node/*/jvm/mem/pools/young/used_in_bytes: {}
+        /intel/elasticsearch/node/*/jvm/threads/count: {}
+        /intel/elasticsearch/node/*/thread_pool/index/active: {}
+        /intel/elasticsearch/node/*/thread_pool/refresh/active: {}
+        /intel/elasticsearch/node/*/thread_pool/refresh/queue: {}
+        /intel/elasticsearch/node/*/thread_pool/refresh/threads: {}
+        /intel/elasticsearch/node/*/process/cpu/percent: {}
+        /intel/elasticsearch/node/*/process/cpu/total_in_millis: {}
+      config: 
+        /intel/elasticsearch/node: 
+          server: "elasticsearch"
+          port: 9200   
+      publish:
+        -
+          plugin_name: "influxdb"
+          config:
+            host: "monitoring-influxdb"
+            port: 8086
+            database: "k8s"
+            user: "admin"
+            password: "admin"

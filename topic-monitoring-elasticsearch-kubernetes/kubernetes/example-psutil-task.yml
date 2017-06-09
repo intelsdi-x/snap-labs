@@ -1,0 +1,39 @@
+---
+  version: 1
+  schedule:
+    type: "simple"
+    interval: "1s"
+  max-failures: 10
+  workflow: 
+    collect:
+      metrics:
+        /intel/psutil/load/load1: {}
+        /intel/psutil/load/load15: {}
+        /intel/psutil/load/load5: {}							 	 
+        /intel/psutil/net/all/bytes_sent: {}						 
+        /intel/psutil/net/all/dropin: {}						 
+        /intel/psutil/net/all/dropout: {}						 
+        /intel/psutil/net/all/errin: {}							 
+        /intel/psutil/net/all/errout: {}						 
+        /intel/psutil/net/all/packets_recv: {}				 
+        /intel/psutil/net/all/packets_sent: {} 						 
+        /intel/psutil/vm/active: {}						 
+        /intel/psutil/vm/available: {}						 
+        /intel/psutil/vm/buffers: {}						 
+        /intel/psutil/vm/cached: {}						 
+        /intel/psutil/vm/free: {}						 
+        /intel/psutil/vm/inactive: {}							 
+        /intel/psutil/vm/total: {} 								 
+        /intel/psutil/vm/used: {} 								 
+        /intel/psutil/vm/used_percent: {}							 
+        /intel/psutil/vm/wired: {}			
+      publish:
+        -
+          plugin_name: "influxdb"
+          config:
+            host: "monitoring-influxdb"
+            port: 8086
+            database: "k8s"
+            user: "admin"
+            password: "admin"
+    

@@ -1,0 +1,30 @@
+---
+  version: 1
+  schedule:
+    type: "simple"
+    interval: "1s"
+  max-failures: 10
+  workflow: 
+    collect:
+      metrics:
+        /intel/procfs/disk/*/io_time: {}
+        /intel/procfs/disk/*/merged_read: {}
+        /intel/procfs/disk/*/merged_write: {}
+        /intel/procfs/disk/*/octets_read: {}
+        /intel/procfs/disk/*/octets_write: {}
+        /intel/procfs/disk/*/ops_read: {}
+        /intel/procfs/disk/*/ops_write: {}
+        /intel/procfs/disk/*/pending_ops: {}
+        /intel/procfs/disk/*/time_read: {}
+        /intel/procfs/disk/*/time_write: {}
+        /intel/procfs/disk/*/weighted_io_time: {}
+      publish:
+        -
+          plugin_name: "influxdb"
+          config:
+            host: "monitoring-influxdb"
+            port: 8086
+            database: "k8s"
+            user: "admin"
+            password: "admin"
+    

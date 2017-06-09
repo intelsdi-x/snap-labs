@@ -1,0 +1,49 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata: 
+    name: snap-elasticsearch
+    namespace: kube-system
+spec:
+    replicas: 1
+    template: 
+        metadata: 
+            labels:
+                app: elasticsearch
+        spec:
+            containers:
+            - name: elasticsearch
+              image: library/elasticsearch:2.3
+              ports:
+              - containerPort: 9200
+              - containerPort: 9300
+              env:
+              - name: ES_JAVA_OPTS
+                value: -Xms256m -Xmx256m
+            - name: main
+              image: candysmurfhub/snap-es-mon-k8s:latest
+              env:
+                - name: SNAP_VERSION
+                  value: "latest"    
+---
+apiVersion: v1
+kind: Service
+metadata:  
+  labels:
+    app: elasticsearch
+  name: elasticsearch
+  namespace: kube-system
+spec:
+  ports:
+  - name: http-api  
+    port: 9200
+    targetPort: 9200
+    protocol: TCP
+  - name: http-web  
+    port: 9300
+    targetPort: 9300
+    protocol: TCP
+  selector:
+    app: elasticsearch
+  sessionAffinity: None
+  type: NodePort

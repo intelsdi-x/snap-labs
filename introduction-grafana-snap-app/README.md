@@ -1,4 +1,4 @@
-This post is an adaptation of what first appeared on  [Medium.com](https://medium.com/@mjbrender/introduction-to-ad-hoc-telemetry-with-snap-and-grafana-d410d71ade5c#.gqmfafi2s).
+*This post is an adaptation of what first appeared on  [Medium.com](https://medium.com/@mjbrender/introduction-to-ad-hoc-telemetry-with-snap-and-grafana-d410d71ade5c#.gqmfafi2s).*
 
 # Introduction to ad hoc telemetry with Snap and Grafana
 
@@ -12,7 +12,7 @@ Remember that OS-specific directions [are always available in the Getting Starte
   * Install: `sudo apt-get install -y snap-telemetry`
   * Start the service: `systemctl start snap-telemetry`
 
-(Remember, if you're at all confused, review [Getting Started](https://github.com/intelsdi-x/snap#getting-started)).
+(If you get stuck for any reason, head over to [Getting Started](https://github.com/intelsdi-x/snap#getting-started) for the full walkthrough)
 
 ## 2. Install Grafana
 [OS-specific directions are here](http://docs.grafana.org/installation/) (last tested with 4.1.1) . On Ubuntu 16.04:

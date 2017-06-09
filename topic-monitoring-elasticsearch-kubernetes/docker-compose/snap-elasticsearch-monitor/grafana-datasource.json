@@ -1,0 +1,11 @@
+{
+  "name":"SNAP",
+  "type":"influxdb",
+  "url":"http://influxdb:8086",
+  "access":"proxy",
+  "basicAuth":false,
+  "database":"k8s",
+  "user":"admin",
+  "password":"admin",
+  "isDefault":true
+}

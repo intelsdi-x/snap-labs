@@ -1,0 +1,6 @@
+[submodule "topic-monitoring-elasticsearch-kubernetes"]
+	path = topic-monitoring-elasticsearch-kubernetes
+	url = https://github.com/candysmurf/snap-elasticsearch-monitor
+[submodule "topic-grafana-docker-compose"]
+	path = topic-grafana-docker-compose
+	url = https://github.com/jcooklin/docker-snap-influxdb-grafana

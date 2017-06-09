@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+set -u
+
+while ! curl -sG "http://admin:admin@grafana:3000/" > /dev/null 2>&1; do
+  sleep 1
+  echo -n "."
+done
+
+curl -XPOST -i http://admin:admin@grafana:3000/api/datasources --data-binary @/etc/snap/grafana-datasource.json -H "Content-Type: application/json"
+curl -XPOST -i http://admin:admin@grafana:3000/api/dashboards/db --data-binary @/etc/snap/snap-elasticsearch-dashboard.json -H "Content-Type: application/json"
+curl -XPOST -i http://admin:admin@grafana:3000/api/dashboards/db --data-binary @/etc/snap/snap-hardware-dashboard.json -H "Content-Type: application/json"
+
+while ! curl -sG "http://snap-elasticsearch:9200/_nodes/stats" > /dev/null 2>&1; do
+  sleep 1
+  echo -n "."
+done
