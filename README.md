@@ -1,3 +1,12 @@
+DISCONTINUATION OF PROJECT. 
+
+This project will no longer be maintained by Intel.
+
+This project has been identified as having known security escapes.
+
+Intel has ceased development and contributions including, but not limited to, maintenance, bug fixes, new releases, or updates, to this project.  
+
+Intel no longer accepts patches to this project.
 # Snap Labs
 A set of guides to using Snap, the open telemetry framework. Read an overview at [snap-telemetry.io](http://snap-telemetry.io) or [head right to the repo](https://github.com/intelsdi-x/snap#the-snap-telemetry-framework----).
 
